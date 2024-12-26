@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструкция по минету</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark {
+            background-color: #333;
+            color: #fff;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #faqContent {
+            margin-top: 20px;
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        /* Стили для кнопок в темной теме */
+        body.dark button {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        body.dark button:hover {
+            background-color: #004494;
+        }
+
+        /* Стили для секций в темной теме */
+        body.dark section {
+            background: #444;
+            color: #fff;
+        }
+
+        body.dark footer {
+            background: #222;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Инструкция по минету</h1>
+        <button id="themeToggle">Сменить тему</button>
+    </header>
+    <main>
+        <section id="preparation">
+            <h2>Шаг 1: Подготовка</h2>
+            <p>Создайте расслабляющую атмосферу. Убедитесь, что вы и ваш партнер чувствуете себя комфортно. Используйте свечи, музыку и ароматические масла для создания уюта.</p>
+        </section>
+        <section id="technique">
+            <h2>Шаг 2: Техника</h2>
+            <p>Используйте различные техники, такие как облизание губами, вакуумное всасывание и легкие покусывания, чтобы доставить удовольствие. Не забывайте о разнообразии!</p>
+        </section>
+        <section id="communication">
+            <h2>Шаг 3: Общение</h2>
+            <p>Обсуждайте с партнером, что ему нравится, и не бойтесь экспериментировать. Открытое общение поможет вам обоим получить больше удовольствия.</p>
+        </section>
+        <section id="tips">
+            <h2>Дополнительные советы</h2>
+            <button id="showTips">Показать советы</button>
+            <div id="tipsContent" style="display: none;">
+                <ul>
+                    <li>Используйте лубриканты для улучшения скольжения и комфорта.</li>
+                    <li>Не забывайте о гигиене перед началом.</li>
+                    <li>Слушайте своего партнера и реагируйте на его реакции.</li>
+                    <li>Экспериментируйте с ритмом и давлением.</li>
+                </ul>
+                <div>
+                    < h3>Оцените советы:</h3>
+                    <button class="rateButton" data-rating="1">1 ⭐</button>
+                    <button class="rateButton" data-rating="2">2 ⭐⭐</button>
+                    <button class="rateButton" data-rating="3">3 ⭐⭐⭐</button>
+                    <button class="rateButton" data-rating="4">4 ⭐⭐⭐⭐</button>
+                    <button class="rateButton" data-rating="5">5 ⭐⭐⭐⭐⭐</button>
+                </div>
+                <div id="ratingMessage" style="margin-top: 10px;"></div>
+            </div>
+        </section>
+        <section id="faq">
+            <h2>Вопросы и ответы</h2>
+            <button id="toggleFAQ">Показать/Скрыть FAQ</button>
+            <div id="faqContent" style="display: none;">
+                <h3>Часто задаваемые вопросы</h3>
+                <p><strong>В: Какой лучший способ начать?</strong></p>
+                <p>О: Начните с легких прикосновений и постепенно увеличивайте интенсивность.</p>
+                <p><strong>В: Как узнать, что партнеру нравится?</strong></p>
+                <p>О: Обратите внимание на его реакции и не стесняйтесь спрашивать.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Инструкция по минету</p>
+    </footer>
+    <script>
+        document.getElementById('showTips').addEventListener('click', function() {
+            const tipsContent = document.getElementById('tipsContent');
+            tipsContent.style.display = tipsContent.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.getElementById('toggleFAQ').addEventListener('click', function() {
+            const faqContent = document.getElementById('faqContent');
+            faqContent.style.display = faqContent.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.querySelectorAll('.rateButton').forEach(button => {
+            button.addEventListener('click', function() {
+                const rating = this.getAttribute('data-rating');
+                document.getElementById('ratingMessage').innerText = `Вы оценили советы на ${rating} звёзд!`;
+            });
+        });
+
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark');
+        });
+    </script>
+</body>
+</html>
